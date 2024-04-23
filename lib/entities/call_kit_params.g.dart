@@ -27,9 +27,6 @@ CallKitParams _$CallKitParamsFromJson(Map<String, dynamic> json) =>
       android: json['android'] == null
           ? null
           : AndroidParams.fromJson(json['android'] as Map<String, dynamic>),
-      ios: json['ios'] == null
-          ? null
-          : IOSParams.fromJson(json['ios'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CallKitParamsToJson(CallKitParams instance) =>
@@ -48,5 +45,4 @@ Map<String, dynamic> _$CallKitParamsToJson(CallKitParams instance) =>
       'extra': instance.extra,
       'headers': instance.headers,
       'android': instance.android?.toJson(),
-      'ios': instance.ios?.toJson(),
     };

@@ -2,7 +2,6 @@ import 'package:flutter_callkit_incoming/entities/notification_params.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'android_params.dart';
-import 'ios_params.dart';
 
 part 'call_kit_params.g.dart';
 
@@ -24,7 +23,6 @@ class CallKitParams {
     this.extra,
     this.headers,
     this.android,
-    this.ios,
   });
 
   final String? id;
@@ -41,7 +39,6 @@ class CallKitParams {
   final Map<String, dynamic>? extra;
   final Map<String, dynamic>? headers;
   final AndroidParams? android;
-  final IOSParams? ios;
 
   factory CallKitParams.fromJson(Map<String, dynamic> json) =>
       _$CallKitParamsFromJson(json);

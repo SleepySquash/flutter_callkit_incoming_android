@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_callkit_incoming/entities/android_params.dart';
 import 'package:flutter_callkit_incoming/entities/call_event.dart';
 import 'package:flutter_callkit_incoming/entities/call_kit_params.dart';
-import 'package:flutter_callkit_incoming/entities/ios_params.dart';
 import 'package:flutter_callkit_incoming/entities/notification_params.dart';
 import 'package:flutter_callkit_incoming/flutter_callkit_incoming.dart';
 import 'package:flutter_callkit_incoming_example/app_router.dart';
@@ -161,22 +160,6 @@ class HomePageState extends State<HomePage> {
           incomingCallNotificationChannelName: 'Incoming Call',
           missedCallNotificationChannelName: 'Missed Call',
         ),
-        ios: const IOSParams(
-          iconName: 'CallKitLogo',
-          handleType: '',
-          supportsVideo: true,
-          maximumCallGroups: 2,
-          maximumCallsPerCallGroup: 1,
-          audioSessionMode: 'default',
-          audioSessionActive: true,
-          audioSessionPreferredSampleRate: 44100.0,
-          audioSessionPreferredIOBufferDuration: 0.005,
-          supportsDTMF: true,
-          supportsHolding: true,
-          supportsGrouping: false,
-          supportsUngrouping: false,
-          ringtonePath: 'system_ringtone_default',
-        ),
       );
       await FlutterCallkitIncoming.showCallkitIncoming(params);
     });
@@ -195,7 +178,6 @@ class HomePageState extends State<HomePage> {
       handle: '0123456789',
       type: 1,
       extra: <String, dynamic>{'userId': '1a2b3c4d'},
-      ios: const IOSParams(handleType: 'number'),
     );
     await FlutterCallkitIncoming.startCall(params);
   }
