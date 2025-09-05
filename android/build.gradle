@@ -2,17 +2,14 @@ group 'com.example.flutter_callkit_incoming'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.8.0'
+    ext.kotlin_version = '2.1.0'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        //classpath 'com.android.tools.build:gradle:4.1.0'
-        //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:8.7.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -37,26 +34,25 @@ android {
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
+
     defaultConfig {
-        minSdk 16
+        minSdk 19
         targetSdk 35
 
         consumerProguardFiles 'consumer-rules.pro'
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = JavaVersion.VERSION_21
     }
-}
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+    kotlin {
+        jvmToolchain(21)
     }
 }
 
